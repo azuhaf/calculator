@@ -8,7 +8,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println("TEST");
+		System.out.println("TEST, TEST");
 	}
 
 }
