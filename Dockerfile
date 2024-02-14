@@ -1,3 +1,3 @@
 FROM openjdk:17-jdk
-COPY /home/gradle/src/build/libs/*.jar app.jar
+COPY build/libs/calculator-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
