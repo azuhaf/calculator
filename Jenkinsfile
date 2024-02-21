@@ -24,6 +24,7 @@ pipeline {
           }
           stage("Docker push") {
                steps {
+               sh "docker login --username azuhav --password 9=TLstAYlt$u?ho+efr9"
                     sh "docker push azuhav/calculator"
                }
           }
