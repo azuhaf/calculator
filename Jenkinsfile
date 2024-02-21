@@ -19,8 +19,7 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "chmod 666 /var/lib/jenkins/workspace/Calculator/build/libs/Calculator-0.0.1-SNAPSHOT.jar"
-                    sh "docker build -f Dockerfile -t calculator . "
+                    sh "docker build -f ../Dockerfile . -t calculator"
                }
           }
           stage("Docker push") {
