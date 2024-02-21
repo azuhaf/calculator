@@ -19,7 +19,7 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "docker build -t azuhav/calculator -f Dockerfile ."
+                    sh "docker build -t azuhav/calculator ."
                }
           }
           stage("Docker push") {
