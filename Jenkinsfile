@@ -19,18 +19,18 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "docker build -f Dockerfile . -t calculator"
+                    sh "docker build -t azuhav/calculator ."
                }
           }
           stage("Docker push") {
                steps {
-                    sh "docker push calculator"
+                    sh "docker push azuhav/calculator"
                }
           }
 
           stage("Deploy to staging") {
                steps {
-                    sh "docker run -d --rm -p 8765:8080 --name calculator"
+                    sh "docker run -d --rm -p 8765:8080 --name azuhav/calculator"
                }
           }
           stage("Acceptance test") {
