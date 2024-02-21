@@ -13,7 +13,7 @@ pipeline {
           }
           stage("Package") {
                steps {
-                    sh "./gradlew build --scan -s"
+                    sh "./gradlew build"
                }
           }
 
