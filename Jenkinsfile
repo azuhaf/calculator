@@ -19,7 +19,7 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "docker build -f ../Dockerfile . -t calculator"
+                    sh "docker build -f Dockerfile . -t calculator"
                }
           }
           stage("Docker push") {
