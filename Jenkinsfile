@@ -19,6 +19,7 @@ pipeline {
 
           stage("Docker build") {
                steps {
+                    sh "chmod +x -R ${env.WORKSPACE}"
                     sh "docker build -f Dockerfile -t azuhav/calculator . "
                }
           }
