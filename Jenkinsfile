@@ -19,19 +19,18 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "chmod +x -R ${env.WORKSPACE}"
-                    sh "docker build -f Dockerfile -t azuhav/calculator . "
+                    sh "docker build -f Dockerfile -t calculator . "
                }
           }
           stage("Docker push") {
                steps {
-                    sh "docker push azuhav/calculator"
+                    sh "docker push calculator"
                }
           }
 
           stage("Deploy to staging") {
                steps {
-                    sh "docker run -d --rm -p 8765:8080 --name calculator azuhav/calculator"
+                    sh "docker run -d --rm -p 8765:8080 --name calculator"
                }
           }
           stage("Acceptance test") {
