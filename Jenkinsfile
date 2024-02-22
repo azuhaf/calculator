@@ -24,7 +24,7 @@ pipeline {
           }
           stage("Docker push") {
                steps {
-                    sh "docker login --username=azuhav --password=TIstlgAGlpu546wl2e?5"
+               sh "docker login --username=azuhav --password=TIstlgAGlpu546wl2e?5"
                     sh "docker push azuhav/calculator"
                }
           }
@@ -36,14 +36,14 @@ pipeline {
           }
           stage("Acceptance test") {
                steps {
-                    sleep 60
+                    sleep 30
                     sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
                }
           }
      }
      post {
           always {
-               sh "docker ps"
+               sh "docker stop calculator"
           }
      }
 }
