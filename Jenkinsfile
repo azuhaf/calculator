@@ -19,7 +19,6 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "usermod -aG docker $USER"
                     sh "docker build -t azuhav/calculator ."
                }
           }
